@@ -4,15 +4,17 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: 'https://github.com/devfelca/Front-BPC', // <-- ESSENCIAL para GitHub Pages
+  base: '/Front-BPC/', // <-- Correct for GitHub Pages
   server: {
-    host: "::",
+    host: "0.0.0.0",
     port: 8080,
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && (() => {
+      console.log("Initializing componentTagger plugin...");
+      return componentTagger();
+    })(),
   ].filter(Boolean),
   resolve: {
     alias: {
