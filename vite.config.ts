@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: '/Front-BPC/', // <-- ESSENCIAL para GitHub Pages
+  base: 'https://github.com/devfelca/Front-BPC', // <-- ESSENCIAL para GitHub Pages
   server: {
     host: "::",
     port: 8080,
